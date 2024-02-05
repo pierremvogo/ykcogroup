@@ -104,7 +104,7 @@ export default function NavBar({ props }: any) {
                         <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">Abonnements</div>
                         <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">Livres</div>
                         <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">Blog</div>
-                        <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">S'inscrire</div>
+                        <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">S&apos;inscrire</div>
                         <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">Se connecter</div>
 
 

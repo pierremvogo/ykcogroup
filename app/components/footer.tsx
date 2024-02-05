@@ -68,7 +68,7 @@ export default function Footer({ props }: any) {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Support</h2>
                             <ul className="text-gray-500 text-gray-400 font-medium">
                                 <li className="mb-2">
-                                    <a href="#" className="hover:underline">Centre d'aide</a>
+                                    <a href="#" className="hover:underline">Centre d&apos;aide</a>
                                 </li>
                                 <li className="mb-2">
                                     <a href="#" className="">Tel: {"(+237) 651 11 98 80"}</a>
