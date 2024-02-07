@@ -52,7 +52,7 @@ const Carousel = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 top-[-5] z-[1] flex w-[50%] items-left justify-left border-0 bg-none p-0 text-center">
+      <div className="absolute bottom-0 top-[-5] z-[1] flex w-[50%] min-[280px]:w-[100%] items-left justify-left border-0 bg-none p-0 text-center">
         <h1 className="md:text-[#000000] text-center font-sans text-[2.625rem] md:max-w-[24rem] tracking-[-.01em] leading-[110%] min-[280px]:text-white"></h1>
         <h1 className="md:text-[#000000] font-sans md:text-[2.625rem] md:max-w-[24rem] leading-[110%] tracking-[-.01em] min-[280px]:text-white min-[280px]:text-[2.0rem] min-[280px]:leading-[110%] min-[280px]:text-center min-[280px]:font-sans">YKCO Group <br/>Inspiring&nbsp;Excellence</h1>
 

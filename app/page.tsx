@@ -34,13 +34,13 @@ export default function Home() {
 
         </div>
 
-        <div className="min-h-screen w-full bg-no-repeat bg-cover items-center justify-center">
-          <div className="place-content-center w-full my-10">
-          <Carousel />
+        <div className="w-full items-center justify-center">
+          <div className="place-content-center w-full">
+            <Carousel />
           </div>
-          
+
         </div>
-       
+
         <div className="w-full h-20 bg-gradient-to-r from-violet-600 to-violet-200 py-5 px-2">
           <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button" disabled>
             Pourquoi nous choisir?
@@ -62,86 +62,65 @@ export default function Home() {
           <div className="text-white"></div>
         </div>
         <div className="min-h-screen second-bg-image w-full bg-no-repeat bg-cover items-center justify-center">
-          
+
         </div>
-        <div className="grid md:grid-cols-2 gap-5 md:h-75 min-[280px]:grid-cols-1 min-[280px]:h-full bg-[#000000] w-full">
+        <div className="bg-[#000000] grid md:grid-cols-2 gap-5 md:h-75 min-[280px]:grid-cols-1 min-[280px]:gap-1 min-[280px]:h-full w-full">
           <div className="col-span-2">
             <hr className="my-6 border-white sm:mx-auto lg:my-8" />
             <h1 className="font-sans text-[#ffffff] mb-0 pb-0 text-[1.625rem] md:max-w-[24rem] tracking-[-.01em] leading-[0%]">Nos&nbsp;services</h1>
           </div>
 
-          <div className="text-[#000000] grid grid-cols-1 m-8 place-items-center h-[50%]">
-
-            <button className="h-full px-6 items-center justify-center bg-gradient-to-t from-grey-700 to-grey-200 w-[50%] text-sm hover:bg-[#9E70F3] hover:border-grey-800 font-semibold rounded-md bg-white text-[#000000]" type="submit">
-              <div className="grid grid-cols-3">
-                <div className="items-center justify-center">
-                  <Image
-                    src="/supadm1.png"
-                    alt="ecom"
-                    className="dark:invert"
-                    width={96}
-                    height={20}
-                    priority
-                  />
-                </div>
-                <div className="text-sm w-full col-span-2 leading-[350%]">Consulting</div>
-              </div>
-
+          <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1 m-8 bg-white text-center place-items-center h-[50%]">
+            <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
+              <Image
+                src="/consulting-icon.svg"
+                alt="consulting"
+                className="dark:invert px-2"
+                width={50}
+                height={50}
+                priority
+              />
+              <span>Consulting</span>
             </button>
           </div>
-          <div className="text-[#000000] grid grid-cols-1 m-8 place-items-center">
-            <button className="h-full px-6 items-center justify-center bg-gradient-to-t from-grey-700 to-grey-200 w-[50%] text-sm hover:bg-[#9E70F3] hover:border-grey-800 font-semibold rounded-md bg-white text-[#000000]" type="submit">
-              <div className="grid grid-cols-3">
-                <div className="items-center justify-center">
-                  <Image
-                    src="/d5.png"
-                    alt="ecom"
-                    className="dark:invert"
-                    width={96}
-                    height={20}
-                    priority
-                  />
-                </div>
-                <div className="text-sm w-full col-span-2 leading-[180%]">E-commerce<br />
-                  Import &nbsp;/&nbsp;Export</div>
-              </div>
-
+          <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1 m-8 bg-white text-center place-items-center h-[50%]">
+            <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
+              <Image
+                src="/shopping-icon.svg"
+                alt="consulting"
+                className="dark:invert px-2"
+                width={50}
+                height={50}
+                priority
+              />
+              <span>E-commerce<br />
+                Import &nbsp;/&nbsp;Export</span>
             </button>
           </div>
-          <div className="text-[#000000] grid grid-cols-1 m-8 place-items-center">
-            <button className="h-full px-6 items-center justify-center bg-gradient-to-t from-grey-700 to-grey-200 w-[50%] text-sm hover:bg-[#9E70F3] hover:border-grey-800 font-semibold rounded-md bg-white text-[#000000]" type="submit">
-              <div className="grid grid-cols-3">
-                <div className="items-center justify-center">
-                  <Image
-                    src="/adm3.png"
-                    alt="ecom"
-                    className="dark:invert"
-                    width={96}
-                    height={20}
-                    priority
-                  />
-                </div>
-                <div className="text-sm w-full col-span-2 leading-[350%]">Formation</div>
-              </div>
-
+          <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1  m-8 bg-white text-center place-items-center h-[50%]">
+            <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
+              <Image
+                src="/training-online-icon.svg"
+                alt="consulting"
+                className="dark:invert px-2"
+                width={50}
+                height={50}
+                priority
+              />
+              <span>Formation</span>
             </button>
           </div>
-          <div className="text-[#000000] grid grid-cols-1 m-8 md:place-items-center">
-            <button className="h-full px-6 items-center justify-center bg-gradient-to-t from-grey-700 to-grey-200 w-[50%] text-sm hover:bg-[#9E70F3] hover:border-grey-800 font-semibold rounded-md bg-white text-[#000000]" type="submit">
-              <div className="grid grid-cols-3">
-                <div className="items-center justify-center">
-                  <Image
-                    src="/chat2.png"
-                    alt="ecom"
-                    className="dark:invert"
-                    width={96}
-                    height={20}
-                    priority
-                  />
-                </div>
-                <div className="text-sm w-full col-span-2 leading-[350%]">Média</div>
-              </div>
-
+          <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1 m-8 bg-white text-center place-items-center h-[50%]">
+            <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
+              <Image
+                src="/slideshow-line-icon.svg"
+                alt="consulting"
+                className="dark:invert px-2"
+                width={50}
+                height={50}
+                priority
+              />
+              <span>Média</span>
             </button>
           </div>
           <div className="text-white"></div>
