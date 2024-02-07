@@ -5,6 +5,8 @@ import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 import "./globals.css";
 import { useEffect, useState } from "react";
+import Carroussel from "./components/carousel";
+import Carousel from "./components/carousel";
 
 export default function Home() {
   const [showColor, setShowColor] = useState(false)
@@ -32,13 +34,13 @@ export default function Home() {
 
         </div>
 
-        <div className="min-h-screen main-bg-image w-full bg-no-repeat bg-cover items-center justify-center">
-          <div className="grid grid-rows-2 gap-4 place-content-center w-full h-full my-10">
-            <h1 className="md:text-[#000000] text-center font-sans text-[2.625rem] md:max-w-[24rem] tracking-[-.01em] leading-[110%] min-[280px]:text-white">YKCO Group</h1>
-            <h1 className="md:text-[#000000] font-sans md:text-[2.625rem] md:max-w-[24rem] leading-[110%] tracking-[-.01em] min-[280px]:text-white min-[280px]:text-[2.0rem] min-[280px]:leading-[110%] min-[280px]:text-center min-[280px]:font-sans">Inspiring&nbsp;Excellence</h1>
-
+        <div className="min-h-screen w-full bg-no-repeat bg-cover items-center justify-center">
+          <div className="place-content-center w-full my-10">
+          <Carousel />
           </div>
+          
         </div>
+       
         <div className="w-full h-20 bg-gradient-to-r from-violet-600 to-violet-200 py-5 px-2">
           <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button" disabled>
             Pourquoi nous choisir?
@@ -60,7 +62,7 @@ export default function Home() {
           <div className="text-white"></div>
         </div>
         <div className="min-h-screen second-bg-image w-full bg-no-repeat bg-cover items-center justify-center">
-
+          
         </div>
         <div className="grid md:grid-cols-2 gap-5 md:h-75 min-[280px]:grid-cols-1 min-[280px]:h-full bg-[#000000] w-full">
           <div className="col-span-2">
