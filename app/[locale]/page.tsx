@@ -6,7 +6,6 @@ import "./globals.css";
 import Carousel from "./components/carousel";
 import Modal from "./components/modal";
 import ModalDelay from "./components/modaldelay";
-import TestTranslation from "./components/textTranslation";
 import initTranslations from "@/i18n";
 import TranslationsProvider from "./components/TranslationsProvider";
 
