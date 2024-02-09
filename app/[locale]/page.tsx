@@ -1,135 +1,131 @@
-'use client'
 import Image from "next/image";
 import Movies from "./movies/movies";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 import "./globals.css";
-import { useEffect, useState } from "react";
-import Carroussel from "./components/carousel";
 import Carousel from "./components/carousel";
+import Modal from "./components/modal";
+import ModalDelay from "./components/modaldelay";
+import TestTranslation from "./components/textTranslation";
+import initTranslations from "@/i18n";
+import TranslationsProvider from "./components/TranslationsProvider";
 
-export default function Home() {
-  const [showColor, setShowColor] = useState(false)
-  const TOP_OFFSET = 5;
-  useEffect(() => {
-    const handleScroll = () => {
-      console.log(`Window screen : ${window.screenY}`);
-      if (window.screenY >= TOP_OFFSET) {
-        setShowColor(true);
-      } else {
-        setShowColor(false);
-      }
-    }
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    }
-  }, [])
+const I18Nnamespaces =  ['home', 'services', 'menu', 'slogan']
+export default async function Home({ params: { locale } }: any) {
+  const { t, resources } = await initTranslations(locale, I18Nnamespaces);
   return (
-    <main>
-      <NavBar />
-      <div className="flex min-h-screen flex-col items-center mb-5">
-        <div className="grid grid-cols-2 gap-4 place-content-center my-7 bg-gradient-to-r from-sky-500 to-indigo-500">
+    <TranslationsProvider 
+      resources={resources}
+      locale={locale}
+      namespaces={I18Nnamespaces} 
+    >
+      <main>
+        <ModalDelay  delay={5000}/>
+        <NavBar />
+        <div className="flex min-h-screen flex-col items-center mb-5">
+          <div className="grid grid-cols-2 gap-4 place-content-center my-7 bg-gradient-to-r from-sky-500 to-indigo-500">
 
-        </div>
-
-        <div className="w-full items-center justify-center">
-          <div className="place-content-center w-full">
-            <Carousel />
           </div>
 
-        </div>
-
-        <div className="w-full h-20 bg-gradient-to-r from-violet-600 to-violet-200 py-5 px-2">
-          <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button" disabled>
-            Pourquoi nous choisir?
-          </button>
-        </div>
-        <div className="grid md:grid-cols-2 gap-5 md:h-60 min-[280px]:grid-cols-1 min-[280px]:h-full bg-[#000000] w-full">
-          <div className="text-[#ffffff] grid grid-rows-2 m-5">
-            <h1 className="font-sans mb-0 pb-0 text-[1.625rem] md:max-w-[24rem] tracking-[-.01em] leading-[110%]">Des&nbsp;contenus novateurs</h1>
-            <h2 className="font-sans underline cursor-pointer">En&nbsp;savoir&nbsp;plus sur nos contenus</h2>
+          <div className="w-full items-center justify-center">
+            <div className="place-content-center w-full">
+              <Carousel />
+            </div>
           </div>
-          <div className="text-[#ffffff] grid grid-rows-2 m-5 md:place-content-end">
-            <h1 className="font-sans mb-0 pb-0 text-[1.625rem] md:max-w-[24rem] tracking-[-.01em] leading-[110%]">Outil&nbsp;conçu&nbsp;par les experts</h1>
-            <h2 className="font-sans underline cursor-pointer">Explorez&nbsp;meilleures&nbsp;offres</h2>
-          </div>
-          <div className="text-[#ffffff] grid grid-rows-2 m-5">
-            <h1 className="font-sans mb-0 pb-0 text-[1.625rem] md:max-w-[24rem] tracking-[-.01em] leading-[110%]">Client&nbsp;toujours satisfait</h1>
-            <h2 className="font-sans underline cursor-pointer">Avis&nbsp;de&nbsp;nos&nbsp;clients</h2>
-          </div>
-          <div className="text-white"></div>
-        </div>
-        <div className="min-h-screen second-bg-image w-full bg-no-repeat bg-cover items-center justify-center">
-
-        </div>
-        <div className="bg-[#000000] grid md:grid-cols-2 gap-5 md:h-75 min-[280px]:grid-cols-1 min-[280px]:gap-1 min-[280px]:h-full w-full">
-          <div className="col-span-2">
-            <hr className="my-6 border-white sm:mx-auto lg:my-8" />
-            <h1 className="font-sans text-[#ffffff] mb-0 pb-0 text-[1.625rem] md:max-w-[24rem] tracking-[-.01em] leading-[0%]">Nos&nbsp;services</h1>
-          </div>
-
-          <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1 m-8 bg-white text-center place-items-center h-[50%]">
-            <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
-              <Image
-                src="/consulting-icon.svg"
-                alt="consulting"
-                className="dark:invert px-2"
-                width={50}
-                height={50}
-                priority
-              />
-              <span>Consulting</span>
+          <div className="w-full h-20 bg-gradient-to-r from-violet-600 to-violet-200 py-5 px-2">
+            <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button" disabled>
+              <h2>{t("key1")}?</h2>
             </button>
           </div>
-          <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1 m-8 bg-white text-center place-items-center h-[50%]">
-            <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
-              <Image
-                src="/shopping-icon.svg"
-                alt="consulting"
-                className="dark:invert px-2"
-                width={50}
-                height={50}
-                priority
-              />
-              <span>E-commerce<br />
-                Import &nbsp;/&nbsp;Export</span>
+          <div className="grid md:grid-cols-2 gap-5 md:h-60 min-[280px]:grid-cols-1 min-[280px]:h-full bg-[#000000] w-full">
+            <div className="text-[#ffffff] grid grid-rows-2 m-5">
+              <h1 className="mb-0 pb-0 text-[1.625rem] md:max-w-[24rem] leading-[110%]">{t("key2")}</h1>
+              <h2 className="underline cursor-pointer">{t("key3")}</h2>
+            </div>
+            <div className="text-[#ffffff] grid grid-rows-2 m-5 md:place-content-end">
+              <h1 className=" mb-0 pb-0 text-[1.625rem] md:max-w-[24rem] leading-[110%]">{t("key4")}</h1>
+              <h2 className=" underline cursor-pointer">{t("key5")}</h2>
+            </div>
+            <div className="text-[#ffffff] grid grid-rows-2 m-5">
+              <h1 className=" mb-0 pb-0 text-[1.625rem] md:max-w-[24rem] leading-[110%]">{t("key6")}</h1>
+              <h2 className=" underline cursor-pointer">{t("key7")}</h2>
+            </div>
+            <div className="text-white"></div>
+          </div>
+          <div className="min-h-screen img_animation second-bg-image w-full bg-no-repeat bg-cover items-center justify-center">
+
+          </div>
+          <div className="w-full h-20 bg-gradient-to-r from-violet-600 to-violet-200 py-5 px-2">
+            <button className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button" disabled>
+              <h2>{t("key8")}</h2>
             </button>
           </div>
-          <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1  m-8 bg-white text-center place-items-center h-[50%]">
-            <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
-              <Image
-                src="/training-online-icon.svg"
-                alt="consulting"
-                className="dark:invert px-2"
-                width={50}
-                height={50}
-                priority
-              />
-              <span>Formation</span>
-            </button>
+          <div className="bg-[#000000] grid md:grid-cols-2 gap-5 md:h-75 min-[280px]:grid-cols-1 min-[280px]:gap-1 min-[280px]:h-full w-full">
+            <div className="col-span-2">
+              <hr className="my-6 border-white sm:mx-auto lg:my-8" />
+            </div>
+
+            <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1 m-8 bg-white text-center place-items-center h-[50%]">
+              <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
+                <Image
+                  src="/consulting-icon.svg"
+                  alt="consulting"
+                  className="dark:invert px-2"
+                  width={50}
+                  height={50}
+                  priority
+                />
+                <span>Consulting</span>
+              </button>
+            </div>
+            <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1 m-8 bg-white text-center place-items-center h-[50%]">
+              <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
+                <Image
+                  src="/shopping-icon.svg"
+                  alt="consulting"
+                  className="dark:invert px-2"
+                  width={50}
+                  height={50}
+                  priority
+                />
+                <span>E-commerce<br />
+                  Import &nbsp;/&nbsp;Export</span>
+              </button>
+            </div>
+            <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1  m-8 bg-white text-center place-items-center h-[50%]">
+              <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
+                <Image
+                  src="/training-online-icon.svg"
+                  alt="consulting"
+                  className="dark:invert px-2"
+                  width={50}
+                  height={50}
+                  priority
+                />
+                <span>{t("services:key1")}</span>
+              </button>
+            </div>
+            <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1 m-8 bg-white text-center place-items-center h-[50%]">
+              <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
+                <Image
+                  src="/slideshow-line-icon.svg"
+                  alt="consulting"
+                  className="dark:invert px-2"
+                  width={50}
+                  height={50}
+                  priority
+                />
+                <span>{t("services:key2")}</span>
+              </button>
+            </div>
+            <div className="text-white"></div>
           </div>
-          <div className="text-[#000000] cursor-pointer hover:bg-stone-300 rounded-[5px] min-[280px]:col-span-2 md:col-span-1 m-8 bg-white text-center place-items-center h-[50%]">
-            <button className="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
-              <Image
-                src="/slideshow-line-icon.svg"
-                alt="consulting"
-                className="dark:invert px-2"
-                width={50}
-                height={50}
-                priority
-              />
-              <span>Média</span>
-            </button>
-          </div>
-          <div className="text-white"></div>
+
+
         </div>
-
-
-      </div>
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </TranslationsProvider>
   );
 
 
@@ -252,7 +248,7 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="flex font-sans">
+      <div className="flex ">
         <div className="flex-none w-48 relative">
           <img src="/campaign (3).jpg" alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>

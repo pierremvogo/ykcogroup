@@ -1,26 +1,13 @@
 'use client';
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import "../globals.css";
+import { useTranslation } from "react-i18next";
+import LanguageChanger from "./LanguangeChanger";
 
 
 export default function NavBar({ props }: any) {
-
-    const [showColor, setShowColor] = useState(false)
-    const TOP_OFFSET = 50;
-    /*useEffect(()=>{
-        const handleScroll = () => {
-            if(window.screenY >= TOP_OFFSET){
-                setShowColor(true)
-            }else{
-                setShowColor(false)
-            }
-        }
-        window.addEventListener('scroll', handleScroll);
-
-        return ()=>{
-            window.removeEventListener('scroll', handleScroll);
-        }
-    },[])*/
+    const { t } = useTranslation();
     const toggleDropdown = () => {
         if (typeof document !== 'undefined') {
             let dropdownButton = document.querySelector("#dropdownButton #dropdown");
@@ -30,7 +17,7 @@ export default function NavBar({ props }: any) {
 
 
     return (
-        <nav className="bg-[#000000] absolute z-[5] border-gray-200 dark:bg-gray-900 fixed w-full">
+        <nav className="bg-[#000000] z-[9999] fixed border-gray-200 dark:bg-gray-900 t-0 w-full">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0">
                 <a href="https://ykco.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <Image
@@ -43,7 +30,11 @@ export default function NavBar({ props }: any) {
                     />
                     <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
                 </a>
+                <div className="">
+                    <LanguageChanger />
+                </div>
                 <button className="relative inline-flex" id="dropdownButton">
+
                     <div className="border-solid border-grey-800 border-[1px] px-5 py-2 m-2 rounded cursor-pointer bg-white"
                         onClick={toggleDropdown}
                     >
@@ -55,7 +46,7 @@ export default function NavBar({ props }: any) {
                     </div>
                     <div id="dropdown" className="rounded-bl rounded-tl shadow-md hidden border-gray-800 bg-[#00000] absolute min-[280px]:w-screen min-[768px]:w-[400px] top-[0px] right-[0px] md:w-[400px]">
                         <div className="grid grid-cols-4 gap-4 place-items-end rounded cursor-pointer border-blue-800 border-b-5">
-                                    
+
                             <div></div>
                             <div></div>
                             <div></div>
@@ -69,14 +60,14 @@ export default function NavBar({ props }: any) {
 
                             </div>
                         </div>
-                        <div className="cursor-pointer  py-2 border-b-2 px-1 text-left text-white bg-[#000000] border-t-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-200">Acceuil</div>
-                        <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] bg-[#000000] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">Services</div>
-                        <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">A propos de nous</div>
-                        <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">Abonnements</div>
-                        <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">Livres</div>
-                        <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">Blog</div>
-                        <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">S&apos;inscrire</div>
-                        <div className="cursor-pointer  py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">Se connecter</div>
+                        <div className="cursor-pointer navitem  py-2 border-b-2 px-1 text-left text-white bg-[#000000] border-t-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-200">{t('menu:key1')}</div>
+                        <div className="cursor-pointer navitem py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] bg-[#000000] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">{t('menu:key2')}</div>
+                        <div className="cursor-pointer navitem py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">{t('menu:key3')}</div>
+                        <div className="cursor-pointer navitem py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">{t('menu:key4')}</div>
+                        <div className="cursor-pointer navitem py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">{t('menu:key5')}</div>
+                        <div className="cursor-pointer navitem py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">{t('menu:key6')}</div>
+                        <div className="cursor-pointer navitem py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">{t('menu:key7')}</div>
+                        <div className="cursor-pointer navitem py-2 px-1 text-left text-white bg-[#000000] border-b-2 border-[#ffffff] transition ease-in-out delay-10 hover:-translate-x-1 duration-800">{t('menu:key8')}</div>
 
 
                     </div>
