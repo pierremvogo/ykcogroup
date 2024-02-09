@@ -20,7 +20,7 @@ export default async function Home({ params: { locale } }: any) {
       namespaces={I18Nnamespaces} 
     >
       <main>
-        <ModalDelay  delay={5000}/>
+        <ModalDelay />
         <NavBar />
         <div className="flex min-h-screen flex-col items-center mb-5">
           <div className="grid grid-cols-2 gap-4 place-content-center my-7 bg-gradient-to-r from-sky-500 to-indigo-500">

@@ -30,27 +30,36 @@ const Carousel = () => {
           className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-te-carousel-item
           data-te-carousel-active>
-          <img
+          <Image
             src="/slide (1).jpg"
             className="block w-full"
+            width={50}
+            height={50}
+            priority
             alt="Wild Landscape" />
         </div>
 
         <div
           className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-te-carousel-item>
-          <img
+          <Image
             src="/slide (2).jpg"
             className="block w-full"
+            width={50}
+            height={50}
+            priority
             alt="Camera" />
         </div>
 
         <div
           className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-te-carousel-item>
-          <img
+          <Image
             src="slide (3).jpg"
             className="block w-full"
+            width={50}
+            height={50}
+            priority
             alt="Exotic Fruits" />
         </div>
       </div>

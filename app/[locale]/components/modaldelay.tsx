@@ -3,12 +3,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import "../globals.css";
 
-export default function ModalDelay({ delay }: any) {
+export default function ModalDelay() {
  const [showModal, setShowModal] = useState(false);
     useEffect( function() {
         setTimeout(function(){
             setShowModal(true);
-        },delay)
+        },5000)
 
       }, [])
 
