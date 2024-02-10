@@ -17,7 +17,7 @@ export default function NavBar({ props }: any) {
 
 
     return (
-        <nav className="bg-[#000000] z-[9999] fixed border-gray-200 dark:bg-gray-900 t-0 w-full">
+        <nav className="bg-[#000000] z-[9999] absolute border-gray-200 dark:bg-gray-900 t-0 w-full">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0">
                 <a href="https://ykco.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <Image
